@@ -33,7 +33,7 @@ Route::get('/jobs/{id}', function ($id) {
     $jobs = [
         [
             'id' => 1,
-            'title' => 'Director',
+            'title' => 'Director of Engineering',
             'salary' => '$100,000',
         ],
         [
@@ -55,6 +55,6 @@ Route::get('/jobs/{id}', function ($id) {
     
 
 Route::get('/contact', function () {
-    return view('contact');
+    return view('contact', ['contact' => 'Contact']);    
 });
 

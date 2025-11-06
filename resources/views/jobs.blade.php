@@ -1,5 +1,8 @@
 <x-layout>
-    <x-slot:heading>Jobs Listing</x-slot:heading>
+    <x-slot:heading>
+        Jobs Listing
+    </x-slot:heading>
+    <ul>
     @foreach ($jobs as $job)
             <li>
                 <a href="/jobs/{{ $job['id'] }}">
@@ -7,8 +10,5 @@
                 </a>
             </li>
     @endforeach
-    
-
-    
-   
+    </ul>
 </x-layout>
