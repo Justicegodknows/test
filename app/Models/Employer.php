@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Models;
-
 use Illuminate\Support\Arr;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Job extends Model
+class Employer extends Model
+
+
 {
     use HasFactory;
 
@@ -15,14 +16,17 @@ class Job extends Model
      *
      * @var array<int, string>
      */
-    protected $table = 'job_listings';
+    protected $table = 'employers';
     protected $fillable = [
-        'title',
-        'salary',
+        'name',
     ];
 
-    public function employer()
+
+    /**
+     * Get the jobs for the employer.
+     */
+     public function jobs()
     {
-        return $this->belongsTo(Employer::class);
+        return $this->hasMany(Job::class);
     }
-}   
+}
