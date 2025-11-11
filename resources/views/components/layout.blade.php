@@ -6,13 +6,7 @@
         <title>My Website</title>
         <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<header class="relative bg-white shadow-sm">
-    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-      @isset($heading)
-        <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ $heading }}</h1>
-      @endisset
-    </div>
-  </header>
+
 <body class="h-full">
   
 <div class="min-h-full">
@@ -69,15 +63,22 @@
           </button>
         </div>
         <div class="mt-3 space-y-1 px-2">
-          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">Your profile</a>
-          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">Settings</a>
-          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">Sign out</a>
+          <x-nav-link href="a" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">Your profile</x-nav-link>
+          <x-nav-link href="a" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">Settings</x-nav-link>
+          <x-nav-link href="a" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-white/5 hover:text-white">Sign out</x-nav-link>
         </div>
       </div>
     </el-disclosure>
   </nav>
   <main>
+    <header class="relative bg-white">
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      @isset($heading)
+        <h1 class="text-2xl font-bold tracking-tight text-gray-900">{{ $heading }}</h1>
+      @endisset
+    </div>
+  </header>
+    <div>
       
         {{$slot}}
       
