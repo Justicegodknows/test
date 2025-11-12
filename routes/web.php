@@ -15,16 +15,27 @@ Route::get('/jobs', function () {
         'jobs' => Job::with('employer')->simplePaginate(5)
     ]);
 });
+
 Route::get('/jobs/create', function () {
     return view('jobs.create');
 });
+
 Route::get('/jobs/{id}', function ($id) {
-    $job = Job::find($id);
+    $job = Job::findOrFail($id);
    
     return view('jobs.show', ['job' => $job]);
 });
+
 Route::post('/jobs', function () {
-    dd(request()->all());
+    // validation...
+    Job::create([
+        'title' => request('title'),
+        'employer_id' => 1, // Hardcoded for now
+        'salary' => request('salary'),
+        'description' => request('description'),
+    ]);
+
+    return redirect('/jobs');
 });
 
 

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('employer_id');
             $table->string('title');
             $table->string('salary');
+            $table->text('description');
             $table->timestamps();
         });
     }

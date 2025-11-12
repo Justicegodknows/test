@@ -18,6 +18,9 @@
                         
             <input type="text" name="salary" id="salary" class="w-full border border-gray-300 p-2 rounded" placeholder="Annual Salary in USD" required>
         </div>
+        <div class="mb-4">
+            <label for="description" class="block text-gray-700 font-bold mb-2">Job Description:</label>
+            <textarea name="description" id="description" class="w-full border border-gray-300 p-2 rounded" placeholder="Enter job description" rows="5" required></textarea>
 
        
 
