@@ -23,6 +23,7 @@
               <x-nav-link type="a" href="/" :active="request()->is('/')"> Home</x-nav-link>
               <x-nav-link type="a" href="/jobs" :active="request()->is('jobs')">Jobs</x-nav-link>
               <x-nav-link type="a" href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
+              
             </div>
           </div>
         </div>
@@ -71,10 +72,14 @@
     </el-disclosure>
   </nav>
   <main>
-    <header class="relative bg-white">
-    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+    <header class="bg-white shadow">
+    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 sm:flex sm:items-center sm:justify-between">
       @isset($heading)
         <h1 class="text-2xl font-bold tracking-tight text-gray-900">{{ $heading }}</h1>
+
+        
+        
+    
       @endisset
     </div>
   </header>

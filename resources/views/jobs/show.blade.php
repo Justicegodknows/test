@@ -6,9 +6,10 @@
    <p>
     <a href="/jobs" class="text-blue-500">Back to Jobs</a>
    </p>
-   
-
-   <p>
+        <p>
+        <a href="/jobs/create">Create Job</a>
+        </p>
+    <p>
     This Job pays {{ $job->salary }} per year.
    </p>
    

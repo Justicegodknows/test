@@ -1,7 +1,14 @@
 <x-layout>
-    <x-slot:heading>
+    <x-slot:heading> 
         Jobs Listings
+
+        <x-button href="/jobs/create" class="mx-auto max-w-3xl px-4 py-6 lg:px-4 items-center">
+            Create Job
+        </x-button>
+       
     </x-slot:heading>
+
+    
 
     <div class="space-y-4">
     @foreach ($jobs as $job)
