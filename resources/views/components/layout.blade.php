@@ -76,14 +76,11 @@
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 sm:flex sm:items-center sm:justify-between">
       @isset($heading)
         <h1 class="text-2xl font-bold tracking-tight text-gray-900">{{ $heading }}</h1>
-
-        
-        
     
       @endisset
     </div>
   </header>
-    <div>
+    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:justify-between lg:px-8">
       
         {{$slot}}
       

@@ -2,49 +2,26 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Job;
+use App\Http\Controllers\JobController;
 
 
 
 
-Route::get('/', function () {
-    return view('home');
+Route::view('/', 'Home');
+
+Route::view('/contact', 'contact');
+
+Route::controller(JobController::class)->group(function () {
+    Route::get('/jobs', 'index');
+    Route::get('/jobs/create', 'create');
+    Route::get('/jobs/{job}', 'show');
+    Route::post('/jobs', 'store');
+    Route::get('/jobs/{job}/edit', 'edit');
+    Route::patch('/jobs/{job}', 'update');
+    Route::delete('/jobs/{job}', 'destroy');
 });
+Route::patch('/jobs/{job}', [JobController::class, 'update']);  
+Route::delete('/jobs/{job}', [JobController::class, 'destroy']);    
+    
 
-Route::get('/jobs', function () {
-    return view('jobs.index', [
-        'jobs' => Job::with('employer')->latest()->simplepaginate(5)
-    ]);
-});
-
-Route::get('/jobs/create', function () {
-    return view('jobs.create');
-});
-
-Route::get('/jobs/{id}', function ($id) {
-    $job = Job::findOrFail($id);
-   
-    return view('jobs.show', ['job' => $job]);
-});
-
-Route::post('/jobs', function () {
-    request()->validate([
-        'title' => 'required|max:255',
-        'salary' => 'required|numeric',
-        'description' => 'required',
-    ]);
-    Job::create([
-        'title' => request('title'),
-        'employer_id' => 1, // Hardcoded for now
-        'salary' => request('salary'),
-        'description' => request('description'),
-    ]);
-
-    return redirect('/jobs');
-});
-
-
-
-Route::get('/contact', function () {
-    return view('contact', ['contact' => 'Contact']);    
-});
 
