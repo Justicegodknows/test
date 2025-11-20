@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Job;
 use App\Http\Controllers\JobController;
-
+use App\Http\Controllers\RegisteredUserController;
+use App\Http\Controllers\LoginController;
 
 
 
@@ -21,7 +22,14 @@ Route::controller(JobController::class)->group(function () {
     Route::delete('/jobs/{job}', 'destroy');
 });
 Route::patch('/jobs/{job}', [JobController::class, 'update']);  
-Route::delete('/jobs/{job}', [JobController::class, 'destroy']);    
+Route::delete('/jobs/{job}', [JobController::class, 'destroy']); 
+
+Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
+Route::post('/register', [RegisteredUserController::class, 'store']);
+
+Route::get('/login', [LoginController::class, 'create'])->name('login');
+Route::post('/login', [LoginController::class, 'store']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
     
 
 
