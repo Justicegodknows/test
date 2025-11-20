@@ -17,7 +17,7 @@ class LoginController extends Controller
 
    public function store()
    {
-     dd('store'); // Validate and log in the user
+     return redirect('/dashboard'); // Validate and log in the user
    }        
    public function logout()
    {

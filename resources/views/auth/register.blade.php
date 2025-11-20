@@ -31,7 +31,7 @@
         </div>
 
         <div>
-            <a href="/" class="inline-block mr-4 text-gray-600 hover:text-gray-800">Cancel</a>
+            <a href="/dashboard" class="inline-block mr-4 text-gray-600 hover:text-gray-800">Cancel</a>
            <x-form-button>Register</x-form-button>
         </div>
     </form>

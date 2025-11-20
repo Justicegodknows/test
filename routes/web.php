@@ -11,6 +11,7 @@ use App\Http\Controllers\LoginController;
 Route::view('/', 'Home');
 
 Route::view('/contact', 'contact');
+Route::view('/dashboard', 'dashboard')->middleware('auth');
 
 Route::controller(JobController::class)->group(function () {
     Route::get('/jobs', 'index');
