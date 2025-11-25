@@ -30,7 +30,7 @@ Route::post('/register', [RegisteredUserController::class, 'store']);
 
 Route::get('/login', [LoginController::class, 'create'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
     
 
 

@@ -4,6 +4,7 @@
     </x-slot:heading>
     <form method="POST" action="/register" class="max-w-md mx-auto bg-white p-6 rounded shadow">
         @csrf
+       
 
         <div class="mb-4">
             <x-form-label for="first_name">First Name:</x-form-label>
@@ -25,14 +26,10 @@
             <x-form-input type="password" name="password" id="password" placeholder="Enter your password" required />
         </div>
 
-        <div class="mb-4">
-            <x-form-label for="password_confirmation">Confirm Password:</x-form-label>
-            <x-form-input type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirm your password" required />
-        </div>
 
         <div>
             <a href="/dashboard" class="inline-block mr-4 text-gray-600 hover:text-gray-800">Cancel</a>
-           <x-form-button>Register</x-form-button>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Register</button>
         </div>
     </form>
 </x-layout>
